@@ -1,0 +1,101 @@
+.checkoutProgress {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: baseline;
+  text-align: center;
+  
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+
+    .stepNumber {
+      display: flex;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      text-justify: center;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 100%;
+      background-color: var(--primary-divider-color);
+      align-items: center;
+      justify-items: center;
+      justify-content: center;
+      align-content: center;
+      .stepContent {
+        z-index: 1000;
+      }
+    }
+    .stepNumberFill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 100%;
+      transition: background-color 0.5s ease-in;
+      transition-delay: 50s;
+      -moz-transition-delay: 1s;   
+      background-color: var(--primary-base-color);
+      
+    }
+
+    .stepName {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  }
+
+  .baseLine {
+    background-color: var(--primary-divider-color);
+    height: 2px;
+    border-radius: 5px;
+  }
+
+  .line {
+    width: 100%;
+  }
+  .middleLine {
+    width: 40%;
+  }
+  .fillLine::after {
+    height: 2px;
+    border-radius: 5px;
+
+    content: "";
+    animation-name: fillColor;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    background-color: var(--primary-base-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .fillLastLine::after {
+    height: 2px;
+    content: "";
+    animation-name: fillColor;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    background-color: var(--primary-base-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @keyframes fillColor {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+}
