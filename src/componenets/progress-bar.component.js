@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./progress-bar.styles";
+
 import * as config from "SourceRoute/Checkout/Checkout.config";
 
 class ProgressBar extends Component {

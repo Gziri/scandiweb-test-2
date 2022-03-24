@@ -1,6 +1,5 @@
 import { Checkout as SourceCheckout } from "SourceRoute/Checkout/Checkout.component";
 import ContentWrapper from "Component/ContentWrapper";
-import "./Checkout.test.style";
 import ProgressBar from "../../componenets/progress-bar.component";
 
 class Checkout extends SourceCheckout {
