@@ -15,18 +15,17 @@ class ProgressBar extends Component {
         x.split("_")[0].slice(1).toString().toLowerCase()
     );
     let steps = stepDisplayText.map((step, index) => (
-      <>
+      <div className="wrapper" key={step}>
         {index > 0 && index < stepDisplayText.length ? (
           <div className="baseLine middleLine">
-            {" "}
             <div
               className={`${
                 index <= rawSteps.indexOf(currentStep) ? "fillLine" : ""
               }`}
             />
           </div>
-        ) : null}
-        <div className="step">
+        ) : <div className="empty"/>}
+        <div className={` ${index === 0 && index < stepDisplayText.length ? "firstStep":""} step`}>
           <div className="stepNumber">
             <div className="stepContent">
               {rawSteps.indexOf(this.props.checkoutStep) > index ? (
@@ -44,7 +43,7 @@ class ProgressBar extends Component {
           </div>
           <p className="stepName">{step}</p>
         </div>
-      </>
+      </div>
     ));
     return (
       <div className="checkoutProgress">
